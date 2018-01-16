@@ -13,6 +13,8 @@
 		77B91598200C45D3001EBB4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B91597200C45D3001EBB4A /* Assets.xcassets */; };
 		77B9159B200C45D3001EBB4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B91599200C45D3001EBB4A /* LaunchScreen.storyboard */; };
 		77B9159E200C45D3001EBB4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B9159D200C45D3001EBB4A /* main.m */; };
+		77B915A8200CA9DD001EBB4A /* CoordinateAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B915A7200CA9DD001EBB4A /* CoordinateAxisView.m */; };
+		77B915AB200CB603001EBB4A /* AxisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B915AA200CB603001EBB4A /* AxisModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		77B9159A200C45D3001EBB4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77B9159C200C45D3001EBB4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B9159D200C45D3001EBB4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		77B915A6200CA9DD001EBB4A /* CoordinateAxisView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinateAxisView.h; sourceTree = "<group>"; };
+		77B915A7200CA9DD001EBB4A /* CoordinateAxisView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinateAxisView.m; sourceTree = "<group>"; };
+		77B915A9200CB603001EBB4A /* AxisModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxisModel.h; sourceTree = "<group>"; };
+		77B915AA200CB603001EBB4A /* AxisModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxisModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				77B9158F200C45D3001EBB4A /* AppDelegate.m */,
 				77B91591200C45D3001EBB4A /* ViewController.h */,
 				77B91592200C45D3001EBB4A /* ViewController.m */,
+				77B915A6200CA9DD001EBB4A /* CoordinateAxisView.h */,
+				77B915A7200CA9DD001EBB4A /* CoordinateAxisView.m */,
+				77B915A9200CB603001EBB4A /* AxisModel.h */,
+				77B915AA200CB603001EBB4A /* AxisModel.m */,
 				77B91594200C45D3001EBB4A /* Main.storyboard */,
 				77B91597200C45D3001EBB4A /* Assets.xcassets */,
 				77B91599200C45D3001EBB4A /* LaunchScreen.storyboard */,
@@ -145,6 +155,8 @@
 				77B91593200C45D3001EBB4A /* ViewController.m in Sources */,
 				77B9159E200C45D3001EBB4A /* main.m in Sources */,
 				77B91590200C45D3001EBB4A /* AppDelegate.m in Sources */,
+				77B915AB200CB603001EBB4A /* AxisModel.m in Sources */,
+				77B915A8200CA9DD001EBB4A /* CoordinateAxisView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7EZ23W2MEV;
 				INFOPLIST_FILE = ChartCoordinateAxis/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanghu.ChartCoordinateAxis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7EZ23W2MEV;
 				INFOPLIST_FILE = ChartCoordinateAxis/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanghu.ChartCoordinateAxis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
