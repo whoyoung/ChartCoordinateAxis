@@ -13,6 +13,8 @@
 		77B91598200C45D3001EBB4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B91597200C45D3001EBB4A /* Assets.xcassets */; };
 		77B9159B200C45D3001EBB4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B91599200C45D3001EBB4A /* LaunchScreen.storyboard */; };
 		77B9159E200C45D3001EBB4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B9159D200C45D3001EBB4A /* main.m */; };
+		77B915DF200DFED5001EBB4A /* KIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B915DC200DFED5001EBB4A /* KIPageView.m */; };
+		77B915E0200DFED5001EBB4A /* KIPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B915DD200DFED5001EBB4A /* KIPageViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		77B9159A200C45D3001EBB4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77B9159C200C45D3001EBB4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B9159D200C45D3001EBB4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		77B915DB200DFED5001EBB4A /* KIPageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPageViewCell.h; sourceTree = "<group>"; };
+		77B915DC200DFED5001EBB4A /* KIPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPageView.m; sourceTree = "<group>"; };
+		77B915DD200DFED5001EBB4A /* KIPageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPageViewCell.m; sourceTree = "<group>"; };
+		77B915DE200DFED5001EBB4A /* KIPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPageView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		77B9158D200C45D3001EBB4A /* ChartCoordinateAxis */ = {
 			isa = PBXGroup;
 			children = (
+				77B915DA200DFED5001EBB4A /* KIPageView */,
 				77B9158E200C45D3001EBB4A /* AppDelegate.h */,
 				77B9158F200C45D3001EBB4A /* AppDelegate.m */,
 				77B91591200C45D3001EBB4A /* ViewController.h */,
@@ -69,6 +76,17 @@
 				77B9159D200C45D3001EBB4A /* main.m */,
 			);
 			path = ChartCoordinateAxis;
+			sourceTree = "<group>";
+		};
+		77B915DA200DFED5001EBB4A /* KIPageView */ = {
+			isa = PBXGroup;
+			children = (
+				77B915DE200DFED5001EBB4A /* KIPageView.h */,
+				77B915DC200DFED5001EBB4A /* KIPageView.m */,
+				77B915DB200DFED5001EBB4A /* KIPageViewCell.h */,
+				77B915DD200DFED5001EBB4A /* KIPageViewCell.m */,
+			);
+			path = KIPageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +163,8 @@
 				77B91593200C45D3001EBB4A /* ViewController.m in Sources */,
 				77B9159E200C45D3001EBB4A /* main.m in Sources */,
 				77B91590200C45D3001EBB4A /* AppDelegate.m in Sources */,
+				77B915E0200DFED5001EBB4A /* KIPageViewCell.m in Sources */,
+				77B915DF200DFED5001EBB4A /* KIPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
