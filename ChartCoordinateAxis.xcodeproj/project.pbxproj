@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		776FD3AC200EE4BD00A68264 /* XPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3AB200EE4BD00A68264 /* XPageViewCell.m */; };
+		776FD3AF200EF2C600A68264 /* YPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3AE200EF2C600A68264 /* YPageViewCell.m */; };
 		77B91590200C45D3001EBB4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B9158F200C45D3001EBB4A /* AppDelegate.m */; };
 		77B91593200C45D3001EBB4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B91592200C45D3001EBB4A /* ViewController.m */; };
 		77B91596200C45D3001EBB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B91594200C45D3001EBB4A /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		776FD3AA200EE4BD00A68264 /* XPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPageViewCell.h; sourceTree = "<group>"; };
 		776FD3AB200EE4BD00A68264 /* XPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPageViewCell.m; sourceTree = "<group>"; };
+		776FD3AD200EF2C600A68264 /* YPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPageViewCell.h; sourceTree = "<group>"; };
+		776FD3AE200EF2C600A68264 /* YPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPageViewCell.m; sourceTree = "<group>"; };
 		77B9158B200C45D3001EBB4A /* ChartCoordinateAxis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartCoordinateAxis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B9158E200C45D3001EBB4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77B9158F200C45D3001EBB4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,13 +75,15 @@
 				77B9158F200C45D3001EBB4A /* AppDelegate.m */,
 				77B91591200C45D3001EBB4A /* ViewController.h */,
 				77B91592200C45D3001EBB4A /* ViewController.m */,
+				776FD3AA200EE4BD00A68264 /* XPageViewCell.h */,
+				776FD3AB200EE4BD00A68264 /* XPageViewCell.m */,
+				776FD3AD200EF2C600A68264 /* YPageViewCell.h */,
+				776FD3AE200EF2C600A68264 /* YPageViewCell.m */,
 				77B91594200C45D3001EBB4A /* Main.storyboard */,
 				77B91597200C45D3001EBB4A /* Assets.xcassets */,
 				77B91599200C45D3001EBB4A /* LaunchScreen.storyboard */,
 				77B9159C200C45D3001EBB4A /* Info.plist */,
 				77B9159D200C45D3001EBB4A /* main.m */,
-				776FD3AA200EE4BD00A68264 /* XPageViewCell.h */,
-				776FD3AB200EE4BD00A68264 /* XPageViewCell.m */,
 			);
 			path = ChartCoordinateAxis;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				77B915E0200DFED5001EBB4A /* KIPageViewCell.m in Sources */,
 				776FD3AC200EE4BD00A68264 /* XPageViewCell.m in Sources */,
 				77B915DF200DFED5001EBB4A /* KIPageView.m in Sources */,
+				776FD3AF200EF2C600A68264 /* YPageViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
