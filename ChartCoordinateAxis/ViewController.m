@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "KIPageView.h"
+#import "XPageViewCell.h"
 @interface ViewController ()<KIPageViewDelegate>
 @property (nonatomic, strong) KIPageView *xPageView;
 @property (nonatomic, strong) KIPageView *yPageView;
@@ -37,22 +38,13 @@
 }
 - (KIPageViewCell *)pageView:(KIPageView *)pageView cellAtIndex:(NSInteger)index {
     if (pageView == self.xPageView) {
-        KIPageViewCell *cell = [pageView dequeueReusableCellWithIdentifier:@"xCell"];
-        UILabel *label = (UILabel *)[cell viewWithTag:1001];
+        XPageViewCell *cell = (XPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"xCell"];
         if (!cell) {
-            cell = [[KIPageViewCell alloc] initWithIdentifier:@"xCell"];
+            cell = [[XPageViewCell alloc] initWithIdentifier:@"xCell"];
             cell.frame = CGRectMake(0, 0, self.xScaleWidth, 15);
-            label = [[UILabel alloc] initWithFrame:cell.bounds];
-            label.textColor = [UIColor blackColor];
-            label.adjustsFontSizeToFitWidth = YES;
-            label.font = [UIFont systemFontOfSize:12];
-            label.textAlignment = NSTextAlignmentCenter;
-            label.backgroundColor = [UIColor orangeColor];
-            label.tag = 1001;
-            [cell addSubview:label];
         }
         NSString *text = index < self.xArray.count ? self.xArray[index] : @"--";;
-        [label setText:text];
+        [cell updateSubviews:text];
         return cell;
     }
     return nil;
