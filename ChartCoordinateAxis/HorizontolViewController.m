@@ -94,7 +94,7 @@ static const float lineWidth = 1.0;
         }
         NSString *text = index < self.yArray.count ? self.yArray[index] : @"--";
         CGFloat value = [text floatValue];
-        CGFloat height = value/_yValuePerScale * _yScaleHeight;
+        CGFloat height = value/self.yValuePerScale * self.yScaleHeight;
         [cell updateSubviews:text height:height];
         return cell;
     }
