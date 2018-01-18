@@ -12,9 +12,9 @@
 		776FC17A2010AAD800CDF3E6 /* XNumberPageVeiwCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FC1792010AAD800CDF3E6 /* XNumberPageVeiwCell.m */; };
 		776FC17D2010AC5500CDF3E6 /* YNamePageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FC17C2010AC5500CDF3E6 /* YNamePageViewCell.m */; };
 		776FC1802010B3DE00CDF3E6 /* DataVerticalPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FC17F2010B3DE00CDF3E6 /* DataVerticalPageViewCell.m */; };
-		776FD3AC200EE4BD00A68264 /* XPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3AB200EE4BD00A68264 /* XPageViewCell.m */; };
-		776FD3AF200EF2C600A68264 /* YPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3AE200EF2C600A68264 /* YPageViewCell.m */; };
-		776FD3D520103D7D00A68264 /* DataPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3D420103D7D00A68264 /* DataPageViewCell.m */; };
+		776FD3AC200EE4BD00A68264 /* XNamePageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3AB200EE4BD00A68264 /* XNamePageViewCell.m */; };
+		776FD3AF200EF2C600A68264 /* YNumberPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3AE200EF2C600A68264 /* YNumberPageViewCell.m */; };
+		776FD3D520103D7D00A68264 /* DataHorizontolPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 776FD3D420103D7D00A68264 /* DataHorizontolPageViewCell.m */; };
 		77B91590200C45D3001EBB4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B9158F200C45D3001EBB4A /* AppDelegate.m */; };
 		77B91593200C45D3001EBB4A /* HorizontolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B91592200C45D3001EBB4A /* HorizontolViewController.m */; };
 		77B91596200C45D3001EBB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B91594200C45D3001EBB4A /* Main.storyboard */; };
@@ -36,12 +36,12 @@
 		776FC17C2010AC5500CDF3E6 /* YNamePageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNamePageViewCell.m; sourceTree = "<group>"; };
 		776FC17E2010B3DE00CDF3E6 /* DataVerticalPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataVerticalPageViewCell.h; sourceTree = "<group>"; };
 		776FC17F2010B3DE00CDF3E6 /* DataVerticalPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataVerticalPageViewCell.m; sourceTree = "<group>"; };
-		776FD3AA200EE4BD00A68264 /* XPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPageViewCell.h; sourceTree = "<group>"; };
-		776FD3AB200EE4BD00A68264 /* XPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPageViewCell.m; sourceTree = "<group>"; };
-		776FD3AD200EF2C600A68264 /* YPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPageViewCell.h; sourceTree = "<group>"; };
-		776FD3AE200EF2C600A68264 /* YPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPageViewCell.m; sourceTree = "<group>"; };
-		776FD3D320103D7D00A68264 /* DataPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataPageViewCell.h; sourceTree = "<group>"; };
-		776FD3D420103D7D00A68264 /* DataPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataPageViewCell.m; sourceTree = "<group>"; };
+		776FD3AA200EE4BD00A68264 /* XNamePageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNamePageViewCell.h; sourceTree = "<group>"; };
+		776FD3AB200EE4BD00A68264 /* XNamePageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNamePageViewCell.m; sourceTree = "<group>"; };
+		776FD3AD200EF2C600A68264 /* YNumberPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNumberPageViewCell.h; sourceTree = "<group>"; };
+		776FD3AE200EF2C600A68264 /* YNumberPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNumberPageViewCell.m; sourceTree = "<group>"; };
+		776FD3D320103D7D00A68264 /* DataHorizontolPageViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHorizontolPageViewCell.h; sourceTree = "<group>"; };
+		776FD3D420103D7D00A68264 /* DataHorizontolPageViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHorizontolPageViewCell.m; sourceTree = "<group>"; };
 		77B9158B200C45D3001EBB4A /* ChartCoordinateAxis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartCoordinateAxis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B9158E200C45D3001EBB4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77B9158F200C45D3001EBB4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,14 +101,14 @@
 				776FC1792010AAD800CDF3E6 /* XNumberPageVeiwCell.m */,
 				776FC17B2010AC5500CDF3E6 /* YNamePageViewCell.h */,
 				776FC17C2010AC5500CDF3E6 /* YNamePageViewCell.m */,
-				776FD3AA200EE4BD00A68264 /* XPageViewCell.h */,
-				776FD3AB200EE4BD00A68264 /* XPageViewCell.m */,
+				776FD3AA200EE4BD00A68264 /* XNamePageViewCell.h */,
+				776FD3AB200EE4BD00A68264 /* XNamePageViewCell.m */,
 				776FC17E2010B3DE00CDF3E6 /* DataVerticalPageViewCell.h */,
 				776FC17F2010B3DE00CDF3E6 /* DataVerticalPageViewCell.m */,
-				776FD3AD200EF2C600A68264 /* YPageViewCell.h */,
-				776FD3AE200EF2C600A68264 /* YPageViewCell.m */,
-				776FD3D320103D7D00A68264 /* DataPageViewCell.h */,
-				776FD3D420103D7D00A68264 /* DataPageViewCell.m */,
+				776FD3AD200EF2C600A68264 /* YNumberPageViewCell.h */,
+				776FD3AE200EF2C600A68264 /* YNumberPageViewCell.m */,
+				776FD3D320103D7D00A68264 /* DataHorizontolPageViewCell.h */,
+				776FD3D420103D7D00A68264 /* DataHorizontolPageViewCell.m */,
 				77B91594200C45D3001EBB4A /* Main.storyboard */,
 				77B91597200C45D3001EBB4A /* Assets.xcassets */,
 				77B91599200C45D3001EBB4A /* LaunchScreen.storyboard */,
@@ -208,11 +208,11 @@
 				776FC17D2010AC5500CDF3E6 /* YNamePageViewCell.m in Sources */,
 				776FC1742010927500CDF3E6 /* RootTableViewController.m in Sources */,
 				77B915E0200DFED5001EBB4A /* KIPageViewCell.m in Sources */,
-				776FD3AC200EE4BD00A68264 /* XPageViewCell.m in Sources */,
+				776FD3AC200EE4BD00A68264 /* XNamePageViewCell.m in Sources */,
 				77B915DF200DFED5001EBB4A /* KIPageView.m in Sources */,
 				776FC17720109AEC00CDF3E6 /* VerticalViewContoller.m in Sources */,
-				776FD3AF200EF2C600A68264 /* YPageViewCell.m in Sources */,
-				776FD3D520103D7D00A68264 /* DataPageViewCell.m in Sources */,
+				776FD3AF200EF2C600A68264 /* YNumberPageViewCell.m in Sources */,
+				776FD3D520103D7D00A68264 /* DataHorizontolPageViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,9 @@
 
 #import "HorizontolViewController.h"
 #import "KIPageView.h"
-#import "XPageViewCell.h"
-#import "YPageViewCell.h"
-#import "DataPageViewCell.h"
+#import "XNamePageViewCell.h"
+#import "YNumberPageViewCell.h"
+#import "DataHorizontolPageViewCell.h"
 @interface HorizontolViewController ()<KIPageViewDelegate>
 @property (nonatomic, strong) KIPageView *xPageView;
 @property (nonatomic, strong) KIPageView *yPageView;
@@ -59,27 +59,27 @@
 }
 - (KIPageViewCell *)pageView:(KIPageView *)pageView cellAtIndex:(NSInteger)index {
     if (pageView == self.xPageView) {
-        XPageViewCell *cell = (XPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"xCell"];
+        XNamePageViewCell *cell = (XNamePageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"xCell"];
         if (!cell) {
-            cell = [[XPageViewCell alloc] initWithIdentifier:@"xCell"];
+            cell = [[XNamePageViewCell alloc] initWithIdentifier:@"xCell"];
             cell.frame = CGRectMake(0, 0, self.xScaleWidth, self.xPageView.frame.size.height);
         }
         NSString *text = index < self.xArray.count ? self.xArray[index] : @"--";;
         [cell updateSubviews:text];
         return cell;
     } else if (pageView == self.yPageView) {
-        YPageViewCell *cell = (YPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"yCell"];
+        YNumberPageViewCell *cell = (YNumberPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"yCell"];
         if (!cell) {
-            cell = [[YPageViewCell alloc] initWithIdentifier:@"yCell"];
+            cell = [[YNumberPageViewCell alloc] initWithIdentifier:@"yCell"];
             cell.frame = CGRectMake(0, 0, self.yPageView.frame.size.width, self.yScaleHeight);
         }
         NSNumber *text = index < self.yScaleValues.count ? self.yScaleValues[self.yScaleValues.count -1-index] : @"--";;
         [cell updateSubviews:text.stringValue];
         return cell;
     } else if (pageView == self.dataPageView) {
-        DataPageViewCell *cell = (DataPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"dataCell"];
+        DataHorizontolPageViewCell *cell = (DataHorizontolPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"dataCell"];
         if (!cell) {
-            cell = [[DataPageViewCell alloc] initWithIdentifier:@"dataCell"];
+            cell = [[DataHorizontolPageViewCell alloc] initWithIdentifier:@"dataCell"];
             cell.frame = CGRectMake(0, 0, self.xScaleWidth, self.dataPageView.frame.size.height);
             cell.backgroundColor = [UIColor purpleColor];
             cell.zeroLineReferencePosition = 1.0*self.yPositiveScaleNum/(self.yNegativeScaleNum + self.yPositiveScaleNum);

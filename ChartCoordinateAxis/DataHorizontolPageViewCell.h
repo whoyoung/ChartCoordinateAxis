@@ -1,5 +1,5 @@
 //
-//  DataPageViewCell.h
+//  DataHorizontolPageViewCell.h
 //  ChartCoordinateAxis
 //
 //  Created by 杨虎 on 2018/1/18.
@@ -8,7 +8,7 @@
 
 #import "KIPageViewCell.h"
 
-@interface DataPageViewCell : KIPageViewCell
+@interface DataHorizontolPageViewCell : KIPageViewCell
 @property (nonatomic, assign) CGFloat zeroLineReferencePosition;
 
 - (void)updateSubviews:(NSString *)text height:(CGFloat)height;

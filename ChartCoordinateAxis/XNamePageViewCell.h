@@ -1,5 +1,5 @@
 //
-//  XPageViewCell.h
+//  XNamePageViewCell.h
 //  ChartCoordinateAxis
 //
 //  Created by 杨虎 on 2018/1/17.
@@ -8,6 +8,6 @@
 
 #import "KIPageViewCell.h"
 
-@interface XPageViewCell : KIPageViewCell
+@interface XNamePageViewCell : KIPageViewCell
 - (void)updateSubviews:(NSString *)text;
 @end

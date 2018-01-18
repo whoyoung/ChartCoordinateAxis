@@ -1,20 +1,20 @@
 //
-//  YPageViewCell.m
+//  YNumberPageViewCell.m
 //  ChartCoordinateAxis
 //
 //  Created by 杨虎 on 2018/1/17.
 //  Copyright © 2018年 杨虎. All rights reserved.
 //
 
-#import "YPageViewCell.h"
+#import "YNumberPageViewCell.h"
 
-@interface YPageViewCell()
+@interface YNumberPageViewCell()
 @property (nonatomic, strong) CALayer *rightLineLayer;
 @property (nonatomic, strong) UILabel *label;
 @end
 
 
-@implementation YPageViewCell
+@implementation YNumberPageViewCell
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.rightLineLayer.frame = CGRectMake(self.bounds.size.width-1, 0, 1, self.bounds.size.height);

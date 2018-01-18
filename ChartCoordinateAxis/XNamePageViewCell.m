@@ -1,19 +1,19 @@
 //
-//  XPageViewCell.m
+//  XNamePageViewCell.m
 //  ChartCoordinateAxis
 //
 //  Created by 杨虎 on 2018/1/17.
 //  Copyright © 2018年 杨虎. All rights reserved.
 //
 
-#import "XPageViewCell.h"
+#import "XNamePageViewCell.h"
 
-@interface XPageViewCell()
+@interface XNamePageViewCell()
 @property (nonatomic, strong) CALayer *topLineLayer;
 @property (nonatomic, strong) UILabel *label;
 @end
 
-@implementation XPageViewCell
+@implementation XNamePageViewCell
 
 - (void)layoutSubviews {
     [super layoutSubviews];

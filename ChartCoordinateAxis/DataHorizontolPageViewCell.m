@@ -6,15 +6,15 @@
 //  Copyright © 2018年 杨虎. All rights reserved.
 //
 
-#import "DataPageViewCell.h"
+#import "DataHorizontolPageViewCell.h"
 
-@interface DataPageViewCell()
+@interface DataHorizontolPageViewCell()
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIView *barView;
 @property (nonatomic, assign) CGFloat barHeight;
 @end
 
-@implementation DataPageViewCell
+@implementation DataHorizontolPageViewCell
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.label.frame = CGRectMake(0, 1, self.bounds.size.width, 15);
