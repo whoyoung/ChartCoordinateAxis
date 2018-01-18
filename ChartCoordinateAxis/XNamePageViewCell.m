@@ -9,7 +9,6 @@
 #import "XNamePageViewCell.h"
 
 @interface XNamePageViewCell()
-@property (nonatomic, strong) CALayer *topLineLayer;
 @property (nonatomic, strong) UILabel *label;
 @end
 
@@ -17,18 +16,9 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.topLineLayer.frame = CGRectMake(0, 0, self.bounds.size.width, 1);
     self.label.frame = CGRectMake(0, 1, self.bounds.size.width, 15);
 }
 
-- (CALayer *)topLineLayer {
-    if (!_topLineLayer) {
-        _topLineLayer = [CALayer layer];
-        _topLineLayer.backgroundColor = [UIColor blackColor].CGColor;
-        [self.contentView.layer addSublayer:_topLineLayer];
-    }
-    return _topLineLayer;
-}
 - (UILabel *)label {
     if (!_label) {
         _label = [[UILabel alloc] initWithFrame:self.bounds];
