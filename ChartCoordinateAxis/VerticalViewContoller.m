@@ -130,7 +130,7 @@
 - (KIPageView *)xPageView {
     if (!_xPageView) {
         _xPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
-        _xPageView.zoomDirection = YHPageViewZoomDirectionX;
+        _xPageView.zoomDirection = YHPageViewZoomDirectionNone;
         _xPageView.delegate = self;
         _xPageView.frame = CGRectMake(CGRectGetMaxX(self.yPageView.frame), CGRectGetMaxY(self.yPageView.frame), self.view.frame.size.width-100, 15);
     }
@@ -208,7 +208,7 @@
 - (KIPageView *)yPageView {
     if (!_yPageView) {
         _yPageView = [[KIPageView alloc] initWithOrientation:KIPageViewVertical];
-        _yPageView.zoomDirection = YHPageViewZoomDirectionY;
+        _yPageView.zoomDirection = YHPageViewZoomDirectionNone;
         _yPageView.delegate = self;
         _yPageView.frame = CGRectMake(0, 64, 60, 400);
     }
