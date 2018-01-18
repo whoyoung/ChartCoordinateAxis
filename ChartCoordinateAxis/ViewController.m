@@ -81,7 +81,7 @@
             cell = [[DataPageViewCell alloc] initWithIdentifier:@"dataCell"];
             cell.frame = CGRectMake(0, 0, self.xScaleWidth, self.dataPageView.frame.size.height);
             cell.backgroundColor = [UIColor purpleColor];
-            cell.zeroLineReferencePosition = self.yPositiveScaleNum/(self.yNegativeScaleNum + self.yPositiveScaleNum);
+            cell.zeroLineReferencePosition = 1.0*self.yPositiveScaleNum/(self.yNegativeScaleNum + self.yPositiveScaleNum);
         }
         NSString *text = index < self.yArray.count ? self.yArray[index] : @"--";
         CGFloat value = [text floatValue];

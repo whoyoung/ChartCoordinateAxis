@@ -43,13 +43,12 @@
     self.label.text = text;
     self.label.frame = CGRectMake(0, 1, self.bounds.size.width, 15);
     
-    CGFloat barValue = [text floatValue];
-    CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition;
-    if (barValue >= 0) {
+    if (height >= 0) {
+        CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition - height;
         self.barView.frame = CGRectMake(0, y, self.bounds.size.width, height);
     } else {
-        y += height;
-        self.barView.frame = CGRectMake(0, y, self.bounds.size.width, height);
+        CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition;
+        self.barView.frame = CGRectMake(0, y, self.bounds.size.width, fabs(height));
     }
 
 }
