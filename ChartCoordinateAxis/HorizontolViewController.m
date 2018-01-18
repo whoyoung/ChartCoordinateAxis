@@ -6,12 +6,12 @@
 //  Copyright © 2018年 杨虎. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HorizontolViewController.h"
 #import "KIPageView.h"
 #import "XPageViewCell.h"
 #import "YPageViewCell.h"
 #import "DataPageViewCell.h"
-@interface ViewController ()<KIPageViewDelegate>
+@interface HorizontolViewController ()<KIPageViewDelegate>
 @property (nonatomic, strong) KIPageView *xPageView;
 @property (nonatomic, strong) KIPageView *yPageView;
 @property (nonatomic, strong) KIPageView *dataPageView;
@@ -28,10 +28,11 @@
 @property (nonatomic, assign) CGFloat maxYValue;
 @end
 
-@implementation ViewController
+@implementation HorizontolViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self prepareData];
     [self findYMaxMinValue];
     [self calculateYScale];
