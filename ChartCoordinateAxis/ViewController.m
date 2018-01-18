@@ -10,6 +10,7 @@
 #import "KIPageView.h"
 #import "XPageViewCell.h"
 #import "YPageViewCell.h"
+#import "DataPageViewCell.h"
 @interface ViewController ()<KIPageViewDelegate>
 @property (nonatomic, strong) KIPageView *xPageView;
 @property (nonatomic, strong) KIPageView *yPageView;
@@ -34,13 +35,14 @@
     [self prepareData];
     [self findYMaxMinValue];
     [self calculateYScale];
-    [self.view addSubview:self.xPageView];
     [self.view addSubview:self.yPageView];
+    [self.view addSubview:self.xPageView];
+    [self.view insertSubview:self.dataPageView belowSubview:self.xPageView];
 }
 
 - (void)prepareData {
-    _xArray = @[@"a",@"bbbbbbb",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"];
-    _yArray = @[@"5",@"4",@"3",@"2",@"1",@"2",@"3",@"4",@"5",@"10"];
+    _xArray = @[@"a",@"bbbbbbb",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l"];
+    _yArray = @[@"5",@"4",@"3",@"2",@"1",@"2",@"3",@"4",@"5",@"10",@"-10",@"-15"];
 }
 
 #pragma mark *************************** KIPageViewDelegate
@@ -49,6 +51,8 @@
         return self.xArray.count;
     } else if (pageView == self.yPageView) {
         return self.yPositiveScaleNum + self.yNegativeScaleNum;
+    } else if (pageView == self.dataPageView) {
+        return self.xArray.count;
     }
     return 0;
 }
@@ -71,6 +75,19 @@
         NSNumber *text = index < self.yScaleValues.count ? self.yScaleValues[self.yScaleValues.count -1-index] : @"--";;
         [cell updateSubviews:text.stringValue];
         return cell;
+    } else if (pageView == self.dataPageView) {
+        DataPageViewCell *cell = (DataPageViewCell *)[pageView dequeueReusableCellWithIdentifier:@"dataCell"];
+        if (!cell) {
+            cell = [[DataPageViewCell alloc] initWithIdentifier:@"dataCell"];
+            cell.frame = CGRectMake(0, 0, self.xScaleWidth, self.dataPageView.frame.size.height);
+            cell.backgroundColor = [UIColor purpleColor];
+            cell.zeroLineReferencePosition = self.yPositiveScaleNum/(self.yNegativeScaleNum + self.yPositiveScaleNum);
+        }
+        NSString *text = index < self.yArray.count ? self.yArray[index] : @"--";
+        CGFloat value = [text floatValue];
+        CGFloat height = value/_yValuePerScale * _yScaleHeight;
+        [cell updateSubviews:text height:height];
+        return cell;
     }
     return nil;
 }
@@ -79,6 +96,8 @@
         return self.xScaleWidth;
     } else if (pageView == self.yPageView) {
         return self.yPageView.frame.size.width;
+    } else if (pageView == self.dataPageView) {
+        return self.xScaleWidth;
     }
     return 0;
 }
@@ -87,31 +106,15 @@
         return self.xPageView.frame.size.height;
     } else if (pageView == self.yPageView) {
         return self.yScaleHeight;
+    } else if (pageView == self.dataPageView) {
+        return self.dataPageView.frame.size.height;
     }
     return 0;
 }
 - (void)updateZoomXRatio:(CGFloat)xRatio YRatio:(CGFloat)yRatio contentOffset:(CGPoint)offset {
     
 }
-
-- (KIPageView *)xPageView {
-    if (!_xPageView) {
-        _xPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
-        _xPageView.zoomDirection = YHPageViewZoomDirectionX;
-        _xPageView.delegate = self;
-        _xPageView.frame = CGRectMake(60, 464, self.view.frame.size.width-100, 40);
-    }
-    return _xPageView;
-}
-- (CGFloat)xScaleWidth {
-    if (_xScaleWidth == 0) {
-        CGFloat xPageVeiwW = self.xPageView.frame.size.width;
-        CGFloat perWidth = (xPageVeiwW-self.xArray.count*self.xPageView.cellMargin)/self.xArray.count;
-        _xScaleWidth = perWidth > 40 ? perWidth: 40;
-    }
-    return _xScaleWidth;
-}
-
+#pragma mark ****************** YPageVeiw
 - (KIPageView *)yPageView {
     if (!_yPageView) {
         _yPageView = [[KIPageView alloc] initWithOrientation:KIPageViewVertical];
@@ -148,9 +151,9 @@
         _yValuePerScale = ceil(_maxYValue/4.0);
         _yNegativeScaleNum = ceil(fabs(_minYValue)/_yValuePerScale);
     } else {
-        _yPositiveScaleNum = ceil(_maxYValue/_yValuePerScale);
-        _yValuePerScale = ceil(fabs(_minYValue)/4.0);
         _yNegativeScaleNum = 4;
+        _yValuePerScale = ceil(fabs(_minYValue)/4.0);
+        _yPositiveScaleNum = ceil(_maxYValue/_yValuePerScale);
     }
 }
 
@@ -178,7 +181,7 @@
 - (NSArray *)yScaleValues {
     if (!_yScaleValues) {
         _yScaleValues = [NSMutableArray arrayWithCapacity:(_yPositiveScaleNum+_yNegativeScaleNum)];
-        for (NSUInteger i=_yNegativeScaleNum; i>0; i++) {
+        for (NSUInteger i=_yNegativeScaleNum; i>0; i--) {
             [_yScaleValues addObject:@(self.yValuePerScale * i * -1)];
         }
         for (NSUInteger i=0; i<_yPositiveScaleNum; i++) {
@@ -187,6 +190,36 @@
         
     }
     return _yScaleValues;
+}
+
+#pragma mark ****************** XPageVeiw
+- (KIPageView *)xPageView {
+    if (!_xPageView) {
+        _xPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
+        _xPageView.zoomDirection = YHPageViewZoomDirectionX;
+        _xPageView.delegate = self;
+        _xPageView.frame = CGRectMake(60, _yPageView.frame.origin.y + self.yScaleHeight*self.yPositiveScaleNum, self.view.frame.size.width-100, 15);
+    }
+    return _xPageView;
+}
+- (CGFloat)xScaleWidth {
+    if (_xScaleWidth == 0) {
+        CGFloat xPageVeiwW = self.xPageView.frame.size.width;
+        CGFloat perWidth = (xPageVeiwW-self.xArray.count*self.xPageView.cellMargin)/self.xArray.count;
+        _xScaleWidth = perWidth > 40 ? perWidth: 40;
+    }
+    return _xScaleWidth;
+}
+
+#pragma mark ****************** DataPageVeiw
+- (KIPageView *)dataPageView {
+    if (!_dataPageView) {
+        _dataPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
+        _dataPageView.zoomDirection = YHPageViewZoomDirectionXAndY;
+        _dataPageView.delegate = self;
+        _dataPageView.frame = CGRectMake(CGRectGetMinX(_xPageView.frame), CGRectGetMinY(_yPageView.frame), CGRectGetWidth(_xPageView.frame), CGRectGetHeight(_yPageView.frame));
+    }
+    return _dataPageView;
 }
 
 - (void)didReceiveMemoryWarning {
