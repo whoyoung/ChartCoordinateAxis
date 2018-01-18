@@ -210,6 +210,7 @@
         _yPageView = [[KIPageView alloc] initWithOrientation:KIPageViewVertical];
         _yPageView.zoomDirection = YHPageViewZoomDirectionNone;
         _yPageView.delegate = self;
+        _yPageView.cellMargin = 6;
         _yPageView.frame = CGRectMake(0, 64, 60, 400);
     }
     return _yPageView;
@@ -229,6 +230,7 @@
         _dataPageView = [[KIPageView alloc] initWithOrientation:KIPageViewVertical];
         _dataPageView.zoomDirection = YHPageViewZoomDirectionY;
         _dataPageView.delegate = self;
+        _dataPageView.cellMargin = 6;
         _dataPageView.frame = CGRectMake(CGRectGetMaxX(_yPageView.frame), CGRectGetMinY(_yPageView.frame), CGRectGetWidth(_xPageView.frame), CGRectGetHeight(_yPageView.frame));
     }
     return _dataPageView;

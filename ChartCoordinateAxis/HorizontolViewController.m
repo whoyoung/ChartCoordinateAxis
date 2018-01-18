@@ -5,7 +5,7 @@
 //  Created by 杨虎 on 2018/1/15.
 //  Copyright © 2018年 杨虎. All rights reserved.
 //
-
+static const float lineWidth = 1.0;
 #import "HorizontolViewController.h"
 #import "KIPageView.h"
 #import "XNamePageViewCell.h"
@@ -38,14 +38,22 @@
     [self calculateYScale];
     [self.view addSubview:self.yPageView];
     [self.view addSubview:self.xPageView];
-    [self.view insertSubview:self.dataPageView belowSubview:self.xPageView];
+    [self addSeparatorLine];
+    [self.view addSubview:self.dataPageView];
 }
 
 - (void)prepareData {
     _xArray = @[@"a",@"bbbbbbb",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l"];
     _yArray = @[@"5",@"4",@"3",@"2",@"1",@"2",@"3",@"4",@"5",@"10",@"-10",@"-15"];
 }
-
+- (void)addSeparatorLine {
+    UIView *rightLine = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.yPageView.frame), CGRectGetMinY(self.yPageView.frame), lineWidth, CGRectGetHeight(self.yPageView.frame))];
+    rightLine.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:rightLine];
+    UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.xPageView.frame), CGRectGetMaxY(self.yPageView.frame), CGRectGetWidth(self.xPageView.frame), lineWidth)];
+    bottomLine.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:bottomLine];
+}
 #pragma mark *************************** KIPageViewDelegate
 - (NSInteger)numberOfCellsInPageView:(KIPageView *)pageView {
     if (pageView == self.xPageView) {
@@ -209,7 +217,8 @@
         _xPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
         _xPageView.zoomDirection = YHPageViewZoomDirectionNone;
         _xPageView.delegate = self;
-        _xPageView.frame = CGRectMake(60, _yPageView.frame.origin.y + self.yScaleHeight*(self.yPositiveScaleNum+self.yNegativeScaleNum), self.view.frame.size.width-100, 15);
+        _xPageView.cellMargin = 6;
+        _xPageView.frame = CGRectMake(CGRectGetMaxX(self.yPageView.frame)+lineWidth, CGRectGetMaxY(self.yPageView.frame)+lineWidth, self.view.frame.size.width-100, 15);
     }
     return _xPageView;
 }
@@ -228,6 +237,7 @@
         _dataPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
         _dataPageView.zoomDirection = YHPageViewZoomDirectionX;
         _dataPageView.delegate = self;
+        _dataPageView.cellMargin = 6;
         _dataPageView.frame = CGRectMake(CGRectGetMinX(_xPageView.frame), CGRectGetMinY(_yPageView.frame), CGRectGetWidth(_xPageView.frame), CGRectGetHeight(_yPageView.frame));
     }
     return _dataPageView;
