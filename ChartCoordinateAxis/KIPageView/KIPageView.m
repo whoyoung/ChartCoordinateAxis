@@ -105,6 +105,9 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self updatePageViewItemsFromOffset:scrollView.contentOffset];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageView:didScrollOffset:)]) {
+        [self.delegate pageView:self didScrollOffset:scrollView.contentOffset];
+    }
 }
 
 #pragma mark - Methods
@@ -623,8 +626,8 @@
     [self updatePageViewItemsFromOffset:adjustP];
     [self reloadVisibleItems];
     [self.scrollView setContentOffset:adjustP animated:NO];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pageView:didZoomingXRatio:YRatio:)]) {
-        [self.delegate pageView:self didZoomingXRatio:_XRatio YRatio:_YRatio];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageView:didZoomingXRatio:YRatio:offset:)]) {
+        [self.delegate pageView:self didZoomingXRatio:_XRatio YRatio:_YRatio offset:adjustP];
     }
 }
 - (void)updatePageViewItemsFromOffset:(CGPoint)offset {
@@ -790,6 +793,9 @@
     _YRatio = yRatio;
     [self updatePageViewItemsFromOffset:offset];
     [self reloadVisibleItems];
+    [self.scrollView setContentOffset:offset animated:NO];
+}
+- (void)adjustScrollViewOffset:(CGPoint)offset {
     [self.scrollView setContentOffset:offset animated:NO];
 }
 @end

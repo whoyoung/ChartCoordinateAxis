@@ -111,8 +111,18 @@
     }
     return 0;
 }
-- (void)updateZoomXRatio:(CGFloat)xRatio YRatio:(CGFloat)yRatio contentOffset:(CGPoint)offset {
+
+- (void)pageView:(KIPageView *)pageView didZoomingXRatio:(CGFloat)xRatio YRatio:(CGFloat)yRatio offset:(CGPoint)offset {
+    if (pageView == self.dataPageView) {
+//        [self.yPageView updateZoomXRatio:xRatio YRatio:yRatio contentOffset:offset];
+        [self.xPageView updateZoomXRatio:xRatio YRatio:yRatio contentOffset:offset];
+    }
     
+}
+- (void)pageView:(KIPageView *)pageView didScrollOffset:(CGPoint)offset {
+    if (pageView == self.dataPageView) {
+        [self.xPageView adjustScrollViewOffset:offset];
+    }
 }
 #pragma mark ****************** YPageVeiw
 - (KIPageView *)yPageView {
@@ -198,7 +208,7 @@
         _xPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
         _xPageView.zoomDirection = YHPageViewZoomDirectionX;
         _xPageView.delegate = self;
-        _xPageView.frame = CGRectMake(60, _yPageView.frame.origin.y + self.yScaleHeight*self.yPositiveScaleNum, self.view.frame.size.width-100, 15);
+        _xPageView.frame = CGRectMake(60, _yPageView.frame.origin.y + self.yScaleHeight*(self.yPositiveScaleNum+self.yNegativeScaleNum), self.view.frame.size.width-100, 15);
     }
     return _xPageView;
 }
@@ -215,7 +225,7 @@
 - (KIPageView *)dataPageView {
     if (!_dataPageView) {
         _dataPageView = [[KIPageView alloc] initWithOrientation:KIPageViewHorizontal];
-        _dataPageView.zoomDirection = YHPageViewZoomDirectionXAndY;
+        _dataPageView.zoomDirection = YHPageViewZoomDirectionX;
         _dataPageView.delegate = self;
         _dataPageView.frame = CGRectMake(CGRectGetMinX(_xPageView.frame), CGRectGetMinY(_yPageView.frame), CGRectGetWidth(_xPageView.frame), CGRectGetHeight(_yPageView.frame));
     }

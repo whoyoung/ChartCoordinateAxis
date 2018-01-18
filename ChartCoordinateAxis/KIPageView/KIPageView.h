@@ -43,7 +43,8 @@ typedef NS_ENUM(NSUInteger, YHPageViewZoomDirection) {
 - (void)pageView:(KIPageView *)pageView didSelectedCellAtIndex:(NSInteger)index;
 - (void)pageView:(KIPageView *)pageView didDeselectedCellAtIndex:(NSInteger)index;
 
-- (void)pageView:(KIPageView *)pageView didZoomingXRatio:(CGFloat)xRatio YRatio:(CGFloat)yRatio;
+- (void)pageView:(KIPageView *)pageView didZoomingXRatio:(CGFloat)xRatio YRatio:(CGFloat)yRatio offset:(CGPoint)offset;
+- (void)pageView:(KIPageView *)pageView didScrollOffset:(CGPoint)offset;
 @end
 
 
@@ -81,4 +82,5 @@ typedef NS_ENUM(NSUInteger, YHPageViewZoomDirection) {
 - (void)reloadData;
 
 - (void)updateZoomXRatio:(CGFloat)xRatio YRatio:(CGFloat)yRatio contentOffset:(CGPoint)offset;
+- (void)adjustScrollViewOffset:(CGPoint)offset;
 @end
