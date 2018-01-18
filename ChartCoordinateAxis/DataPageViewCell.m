@@ -11,11 +11,20 @@
 @interface DataPageViewCell()
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIView *barView;
+@property (nonatomic, assign) CGFloat barHeight;
 @end
 
 @implementation DataPageViewCell
 - (void)layoutSubviews {
     [super layoutSubviews];
+    self.label.frame = CGRectMake(0, 1, self.bounds.size.width, 15);
+    if (self.barHeight >= 0) {
+        CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition - self.barHeight;
+        self.barView.frame = CGRectMake(0, y, self.bounds.size.width, self.barHeight);
+    } else {
+        CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition;
+        self.barView.frame = CGRectMake(0, y, self.bounds.size.width, fabs(self.barHeight));
+    }
 }
 
 - (UIView *)barView {
@@ -41,15 +50,7 @@
 
 - (void)updateSubviews:(NSString *)text height:(CGFloat)height {
     self.label.text = text;
-    self.label.frame = CGRectMake(0, 1, self.bounds.size.width, 15);
-    
-    if (height >= 0) {
-        CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition - height;
-        self.barView.frame = CGRectMake(0, y, self.bounds.size.width, height);
-    } else {
-        CGFloat y = self.bounds.size.height * self.zeroLineReferencePosition;
-        self.barView.frame = CGRectMake(0, y, self.bounds.size.width, fabs(height));
-    }
-
+    self.barHeight = height;
+    [self setNeedsLayout];
 }
 @end
